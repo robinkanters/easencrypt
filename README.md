@@ -19,7 +19,7 @@ AsymmetricEncrypter rsaEncrypter = new RsaEncrypter();
 // Generate a keypair. Since this is the default Java keypair, it's compatible with external code.
 KeyPair keyPair = rsaEncrypter.generateKeyPair();
 
-// Initialze an encrypter with a cipher (which can be swapped out for other implementations).
+// Initialize an encrypter with a cipher (which can be swapped out for other implementations).
 LongTextEncrypter encrypter = new LongTextEncrypterImpl(new DesCipher(), rsaEncrypter);
 ```
 

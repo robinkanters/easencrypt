@@ -12,14 +12,14 @@ everyone can easily integrate RSA/DSA and/or AES/DES into their projects.
 
 First, initialize the encryptors with just 3 lines of code:
 
-```
+```java
 // Initialize the RSA cipher. This can be swapped out for a custom implementation.
 AsymmetricEncrypter rsaEncrypter = new RsaEncrypter();
 
 // Generate a keypair. Since this is the default Java keypair, it's compatible with external code.
 KeyPair keyPair = rsaEncrypter.generateKeyPair();
 
-// Initialze an encrypter with a cipher (which can be swapped out for other implementations).
+// Initialize an encrypter with a cipher (which can be swapped out for other implementations).
 LongTextEncrypter encrypter = new LongTextEncrypterImpl(new DesCipher(), rsaEncrypter);
 ```
 
@@ -27,8 +27,13 @@ LongTextEncrypter encrypter = new LongTextEncrypterImpl(new DesCipher(), rsaEncr
 
 ### Encrypt
 
-```
+```java
 String encrypted = encrypter.encrypt("Hello world!", keyPair.getPublic());
+```
+
+### Decrypt
+
+```java
 String decrypted = encrypter.decrypt(encrypted, keyPair.getPrivate()); // "Hello world!"
 ```
 

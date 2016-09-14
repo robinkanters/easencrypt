@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easencrypt.iml" filepath="$PROJECT_DIR$/.idea/modules/easencrypt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easencrypt_main.iml" filepath="$PROJECT_DIR$/.idea/modules/easencrypt_main.iml" group="easencrypt" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/easencrypt_test.iml" filepath="$PROJECT_DIR$/.idea/modules/easencrypt_test.iml" group="easencrypt" />
+    </modules>
+  </component>
+</project>

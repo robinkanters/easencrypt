@@ -34,8 +34,8 @@ public class AsymmetricEncrypterTest {
 
     private void assertEncryptDecryptReturnsInputString(String plainText) {
         final AsymmetricEncrypter rsaEncrypter = new RsaEncrypter();
-        byte[] encrypted = rsaEncrypter.encrypt(plainText.getBytes(), keyPair);
-        byte[] decrypted = rsaEncrypter.decrypt(encrypted, keyPair);
+        byte[] encrypted = rsaEncrypter.encrypt(plainText.getBytes(), keyPair.getPublic());
+        byte[] decrypted = rsaEncrypter.decrypt(encrypted, keyPair.getPrivate());
 
         assertTrue(encrypted.length > 0);
         assertEquals(plainText, new String(decrypted));

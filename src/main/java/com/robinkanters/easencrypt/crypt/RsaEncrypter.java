@@ -45,7 +45,6 @@ public class RsaEncrypter implements AsymmetricEncrypter {
      *          :The public key
      * @return Encrypted text
      */
-    @Override
     public byte[] encrypt(byte[] text, KeyPair keyPair) {
         return encrypt(text, keyPair.getPublic());
     }
@@ -59,6 +58,7 @@ public class RsaEncrypter implements AsymmetricEncrypter {
      *          :The public key
      * @return Encrypted text
      */
+    @Override
     public byte[] encrypt(byte[] text, PublicKey key) {
         try {
             return tryEncrypt(text, key);
@@ -86,7 +86,6 @@ public class RsaEncrypter implements AsymmetricEncrypter {
      *          :The private key
      * @return plain text
      */
-    @Override
     public byte[] decrypt(byte[] text, KeyPair keyPair) {
         return decrypt(text, keyPair.getPrivate());
     }
@@ -100,6 +99,7 @@ public class RsaEncrypter implements AsymmetricEncrypter {
      *          :The private key
      * @return plain text
      */
+    @Override
     public byte[] decrypt(byte[] text, PrivateKey key) {
         try {
             return tryDecrypt(text, key);

@@ -13,10 +13,11 @@ import static org.junit.Assert.*;
 
 public class LongTextEncrypterTest {
     private KeyPair keyPair;
+    private AsymmetricEncrypter rsaEncrypter;
 
     @Before
     public void setUp() throws Exception {
-        final AsymmetricEncrypter rsaEncrypter = new RsaEncrypter();
+        rsaEncrypter = new RsaEncrypter();
         keyPair = rsaEncrypter.generateKeyPair(512);
     }
 
@@ -24,7 +25,7 @@ public class LongTextEncrypterTest {
     public void longText() throws Exception {
         String plain = "Hello, world!";
 
-        LongTextEncrypter longTextEncrypter = new LongTextEncrypterImpl(new DesCipher());
+        LongTextEncrypter longTextEncrypter = new LongTextEncrypterImpl(new DesCipher(), rsaEncrypter);
 
         String encrypted = longTextEncrypter.encrypt(plain, keyPair.getPublic());
         assertNotEquals(plain, encrypted);
@@ -43,7 +44,7 @@ public class LongTextEncrypterTest {
     public void aes() throws Exception {
         String plain = "Hello, world!";
 
-        LongTextEncrypter longTextEncrypter = new LongTextEncrypterImpl(new AesCipher());
+        LongTextEncrypter longTextEncrypter = new LongTextEncrypterImpl(new AesCipher(), rsaEncrypter);
 
         String encrypted = longTextEncrypter.encrypt(plain, keyPair.getPublic());
         assertNotEquals(plain, encrypted);

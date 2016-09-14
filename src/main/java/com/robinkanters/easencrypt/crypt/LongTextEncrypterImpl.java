@@ -10,12 +10,14 @@ import static java.lang.String.format;
 
 public class LongTextEncrypterImpl implements LongTextEncrypter {
     public static final String DIVIDER = "!!";
-    private final SymmetricalCipher symmetricalCipher;
-    private final RsaEncrypter asymmetricEncrypter;
 
-    public LongTextEncrypterImpl(SymmetricalCipher symmetricalCipher) {
+    private final SymmetricalCipher symmetricalCipher;
+    private final AsymmetricEncrypter asymmetricEncrypter;
+
+    public LongTextEncrypterImpl(SymmetricalCipher symmetricalCipher,
+                                 AsymmetricEncrypter asymmetricEncrypter) {
         this.symmetricalCipher = symmetricalCipher;
-        this.asymmetricEncrypter = new RsaEncrypter();
+        this.asymmetricEncrypter = asymmetricEncrypter;
     }
 
     public String encrypt(String plain, PublicKey publicKey) {

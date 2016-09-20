@@ -82,6 +82,10 @@ dependencies {
 }
 ```
 
+## Bitcoin tipjar
+
+![Bitcoin tipjar](http://chart.apis.google.com/chart?cht=qr&chs=100x100&chl=1Lgg9djmsbdTAPrjtWE8bCeTPZNLzJZxxC&chld=H|0)
+
 ## License
 
 EasEncrypt is distributed under the GNU General Public License v2.0. Please see [the official 
